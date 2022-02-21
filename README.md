@@ -1,3 +1,5 @@
+Copyright (c) 2021, Alexander Damiani
+
 # aws-lambda-demo
 
 ## Description
