@@ -12,7 +12,7 @@ exclude = 'minutely,hourly,alerts'
 
 url = (
     'https://api.openweathermap.org/data/2.5/onecall?' +
-    f'lat={lat}&lon={lon}&exclude={exclude}&appid={API_key}&units=imperial'
+    f'lat={lat}&lon={lon}&exclude={exclude}&appid={os.getenv("WEATHER_API_KEY")}&units=imperial'
 )
 
 
@@ -43,8 +43,7 @@ def handler(event, context):
     response = requests.get(url.format(
         lat=lat,
         lon=lon,
-        exclude=exclude,
-        API_key=os.getenv('WEATHER_API_KEY')
+        exclude=exclude
     ))
 
     data = response.json()
